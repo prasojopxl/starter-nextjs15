@@ -38,7 +38,7 @@ export function useFetch<T>(method: Method, url: string, requestData?: any) {
 export function useFetchWithDeps<T>(
     method: string,
     url: string,
-    deps: any[] = [],
+    deps: any[] = []
 ) {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(true);

@@ -11,19 +11,19 @@ interface iMainMenuState {
     setMainMenu: (value: boolean) => void;
 }
 
-export const useSidebar = create<iSidebarState>(set => ({
+export const useSidebar = create<iSidebarState>((set) => ({
     sideBarShow: true,
     setSideBarShow: (value: boolean) => set({ sideBarShow: value }),
 }));
 
 export const useMainMenu = create<iMainMenuState>()(
     persist(
-        set => ({
+        (set) => ({
             mainMenu: true,
             setMainMenu: (value: boolean) => set({ mainMenu: value }),
         }),
         {
             name: "mainmenu",
-        },
-    ),
+        }
+    )
 );

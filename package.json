@@ -6,8 +6,7 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "format": "prettier --write .",
-        "lint": "next lint"
+        "format": "biome format --write && prettier --write ."
     },
     "dependencies": {
         "@radix-ui/react-slot": "^1.2.3",
@@ -26,6 +25,7 @@
         "zustand": "^5.0.5"
     },
     "devDependencies": {
+        "@biomejs/biome": "1.9.4",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20",
         "@types/react": "^19",

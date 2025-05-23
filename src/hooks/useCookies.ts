@@ -32,12 +32,12 @@ export function useCookies() {
             expires = `; expires=${date.toUTCString()}`;
         }
         document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
-        setCookies(prev => ({ ...prev, [name]: value }));
+        setCookies((prev) => ({ ...prev, [name]: value }));
     };
 
     const deleteCookie = (name: string) => {
         document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        setCookies(prev => {
+        setCookies((prev) => {
             const updatedCookies = { ...prev };
             delete updatedCookies[name];
             return updatedCookies;
