@@ -5,26 +5,26 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
 export default async function LocaleLayout({
-	children,
-	params,
+    children,
+    params,
 }: {
-	children: React.ReactNode;
-	params: { locale: string }; // TANPA Promise!
+    children: React.ReactNode;
+    params: { locale: string }; // TANPA Promise!
 }) {
-	const { locale } = params;
+    const { locale } = params;
 
-	if (!routing.locales.includes(locale as any)) {
-		notFound();
-	}
-	const messages = await getMessages({ locale });
+    if (!routing.locales.includes(locale as any)) {
+        notFound();
+    }
+    const messages = await getMessages({ locale });
 
-	return (
-		<html lang={locale}>
-			<body suppressHydrationWarning={true}>
-				<NextIntlClientProvider locale={locale} messages={messages}>
-					{children}
-				</NextIntlClientProvider>
-			</body>
-		</html>
-	);
+    return (
+        <html lang={locale}>
+            <body suppressHydrationWarning={true}>
+                <NextIntlClientProvider locale={locale} messages={messages}>
+                    {children}
+                </NextIntlClientProvider>
+            </body>
+        </html>
+    );
 }
