@@ -6,29 +6,6 @@ export default function HelloWorld() {
 
 	return (
 		<div className="flex h-screen flex-col items-center justify-center">
-			{[...Array(7)].map((_, i) => (
-				<motion.div
-					key={i}
-					className="absolute rounded-full bg-blue-300 opacity-60"
-					style={{
-						width: 8 + Math.random() * 12,
-						height: 8 + Math.random() * 12,
-						left: `${45 + Math.random() * 10}%`,
-						bottom: "30%",
-					}}
-					animate={{
-						y: [-10, -150],
-						opacity: [1, 0],
-					}}
-					transition={{
-						duration: 3 + Math.random() * 2,
-						repeat: Infinity,
-						repeatType: "loop",
-						delay: Math.random() * 3,
-					}}
-				/>
-			))}
-
 			<motion.div
 				className="text-center text-4xl font-bold"
 				initial={{ opacity: 0, y: -50 }}
